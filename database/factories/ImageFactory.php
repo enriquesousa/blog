@@ -1,0 +1,21 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class ImageFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            // concatenemos con posts/ para que el path de la imagen se guarde como posts/imagen.jpg
+            'url' => 'posts/' . $this->faker->image('public/storage/posts', 640, 480, null, false), // con false me regresa solo: imagen.jpg
+        ];
+    }
+}
